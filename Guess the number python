@@ -1,0 +1,11 @@
+import random
+
+
+
+num1=random.randint(1,6)
+#print(num1):
+num2=int(input("Guess a number between 1 and 6."))
+  
+while num1!=num2:
+    num2=int(input("Keep guessing"))
+print("Correct!")
