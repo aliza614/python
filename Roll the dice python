@@ -1,0 +1,5 @@
+import random
+keep_going=True
+while keep_going:
+   print("You rolled a "+str(random.randint(1,6)))
+   keep_going=input("Keep rolling?(True/False)")
