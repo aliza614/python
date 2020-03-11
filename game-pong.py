@@ -46,10 +46,30 @@ scoreboard.write("Player A: 0 || Player B: 0",align="center", font=("Arial", 24,
 
 #functions
 ##left paddle up
+left_paddle_up():
+    y=left_paddle.ycor()
+    if y<=240:
+        y+=20
+    left_paddle.sety(y)
+                 
 ##left paddle down
+left_paddle_down():
+     y=left_paddle.ycor()
+     if y>=-220:
+         y-=20
+     left_paddle.sety(y)
 ##right paddle up
+right_paddle_up():
+     y=right_paddle.ycor()
+     if y<=240:
+         y+=20
+     right_paddle.sety(y)
 ## right paddle down
-
+right_paddle_down():
+     y=right_paddle.ycor()
+     if y>=-220:
+         y-=20
+     right_paddle.sety(y)
 #keyboard listeners
                  
 #main game loop
