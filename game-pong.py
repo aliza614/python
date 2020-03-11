@@ -72,6 +72,7 @@ def right_paddle_down():
          y-=20
      right_paddle.sety(y)
 #keyboard listeners
+window.listen()
 window.onkeypress(left_paddle_up, "q")
 window.onkeypress(left_paddle_down, "a")
 window.onkeypress(right_paddle_up, "Up")
