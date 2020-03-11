@@ -97,10 +97,14 @@ while True:
          ball.goto(0,0)
          ball.dx*=-1
          left_score+=1
+         scoreboard.clear()
+         scoreboard.write("Player A: {} || Player B: {}".format(left_score, right_score), align = "center", font=("Arial",24,"normal"))
     if ball.xcor()<-390:
          ball.goto(0,0)
          ball.dx*=-1
          right_score+=1
+         scoreboard.clear()
+         scoreboard.write("Player A: {} || Player B: {}".format(left_score, right_score), align = "center", font=("Arial",24,"normal"))
     #ball collides with paddles
     if ball.xcor()>340 and ball.xcor()<350 and (ball.ycor()<right_paddle.ycor()+40 and ball.ycor()>right_paddle.ycor()-40):
          ball.dx*=-1
