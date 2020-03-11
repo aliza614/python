@@ -42,30 +42,30 @@ scoreboard.penup()
 scoreboard.hideturtle()
 scoreboard.goto(0,260)
 scoreboard.clear()
-scoreboard.write("Player A: 0 || Player B: 0",align="center", font=("Arial", 24, "normal")
+scoreboard.write("Player A: 0 || Player B: 0",align="center", font=("Arial", 24, "normal"))
 
 #functions
 ##left paddle up
-left_paddle_up():
+def left_paddle_up():
     y=left_paddle.ycor()
     if y<=240:
         y+=20
     left_paddle.sety(y)
                  
 ##left paddle down
-left_paddle_down():
+def left_paddle_down():
      y=left_paddle.ycor()
      if y>=-220:
          y-=20
      left_paddle.sety(y)
 ##right paddle up
-right_paddle_up():
+def right_paddle_up():
      y=right_paddle.ycor()
      if y<=240:
          y+=20
      right_paddle.sety(y)
 ## right paddle down
-right_paddle_down():
+def right_paddle_down():
      y=right_paddle.ycor()
      if y>=-220:
          y-=20
