@@ -71,15 +71,40 @@ right_paddle_down():
          y-=20
      right_paddle.sety(y)
 #keyboard listeners
+window.onkeypress(left_paddle_up, "q")
+window.onkeypress(left_paddle_down, "a")
+window.onkeypress(right_paddle_up, "Up")
+window.onkeypress(right_paddle_down, "Down")
                  
 #main game loop
+while True:
+    window.update()
     #move ball
+    ball.setx(ball.xcor()+ball.dx)
+    ball.sety(ball.ycor()+ball.dy)
     #bounce ball
+    if ball.ycor()>290:
+         ball.sety(290)
+         ball.dy*=-1
+    if ball.ycor()<-290:
+         ball.sety(-290)
+         ball.dy*=-1
+    
     #ball goes off screen
+    if ball.xcor()>390:
+         ball.goto(0,0)
+         ball.dx*=-1
+         left_score+=1
+    if ball.ycor()<-390:
+         ball.got(0,0)
+         ball.dx*=-1
+         right_score+=1
     #ball collides with paddles
-
-
+    if ball.xcor()>340 and ball.xcor()<350 and (ball.ycor()<right_paddle.ycor()+40 and ball.ycor()>right_paddle.ycor()-40):
+         ball.dx*=-1
+    if ball.xcor()<-340 and ball.xcor()>-350 and (ball.ycor()<left_paddle.ycor()+40 and ball.ycor()>left_paddle.ycor()-40):
+         ball.dx*=-1
 #keeps the window from closing automatically
-import tkinter
-import _tkinter
-tkinter.mainloop()
+#import tkinter
+#import _tkinter
+#tkinter.mainloop()
