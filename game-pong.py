@@ -38,7 +38,7 @@ ball.dy=2
 
 #scoreboard
 scoreboard=turtle.Turtle()
-scoreboard.color("black")
+scoreboard.color("white")
 scoreboard.penup()
 scoreboard.hideturtle()
 scoreboard.goto(0,260)
