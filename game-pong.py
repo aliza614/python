@@ -98,7 +98,7 @@ while True:
          ball.dx*=-1
          left_score+=1
     if ball.xcor()<-390:
-         ball.got(0,0)
+         ball.goto(0,0)
          ball.dx*=-1
          right_score+=1
     #ball collides with paddles
