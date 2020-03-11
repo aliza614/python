@@ -67,5 +67,5 @@ while True:
 
     else:
         tail=snake.pop()
-        window.addch(int(tail[0]),int(tail[0]),' ')
+        window.addch(int(tail[0]),int(tail[1]),' ')
     window.addch(int(snake[0][0]), int(snake[0][1]), curses.ACS_CKBOARD)
