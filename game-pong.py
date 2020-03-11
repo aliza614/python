@@ -29,7 +29,8 @@ right_paddle.goto(360, 0)
 
 #ball
 ball=turtle.Turtle()
-ball.shape=("square")
+ball.shape("square")
+ball.color("white")
 ball.penup()
 ball.goto(0,0)
 ball.dx=2
