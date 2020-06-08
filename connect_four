@@ -1,0 +1,39 @@
+# Connect Four program in Python
+import numpy as np
+
+ROW_COUNT=6
+COL_COUNT=7
+
+def create_board():
+    return np.zeros((ROW_COUNT,COL_COUNT))
+
+def is_valid_location(board, col):
+    return board[ROW_COUNT-1][col]==0
+
+def get_next_open_row(board, col):
+    for r in range(ROW_COUNT):
+       if board [r,col]==0:
+          return r
+
+def drop_piece (board,row,col,turn):
+   board[row][col]=turn
+
+def print_board(board):
+   print(np.flip(board,0)) #over x axis that's what the zero means
+board=create_board()
+play_game_still = True
+turn = 1
+while play_game_still:
+   if turn==1:
+      col = int (input("Player 1 make your selection (0-6)"))
+   else:
+      col= int (input ("Player 2 make your selection (0-6)"))
+   if is_valid_location(board,col):
+      row=get_next_open_row(board,col)
+      drop_piece(board,row,col,turn)
+      print_board(board)
+
+
+   #change who's turn it is
+   turn=turn %2
+   turn=turn+1
